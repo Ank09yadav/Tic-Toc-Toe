@@ -1,6 +1,9 @@
 // Tic Toc Toe Game in java  Source file "create by ANK";
 import java.util.*;
 class TicTacToe{
+		public static final String ANSI_GREEN = "\u001B[32m";
+		public static final String Red = "\u001B[31m";
+		public static final String Nrml= "\u001B[0m";
 	char [] [] board; 
 	public TicTacToe(){
 		 board = new char [3][3];
@@ -30,7 +33,7 @@ class TicTacToe{
 		{
 			board[row][col]= mark;
 		}else {
-			System.out.println("Invalid position , Enter between 0 and 2. ");
+			System.out.println(Red+"Invalid position , Enter between 0 and 2. "+Nrml);
 		}
 	}
 	Boolean checkColWin()
@@ -66,9 +69,9 @@ class TicTacToe{
  
  }
 public class TicToc{
-	public static final String ANSI_GREEN = "\u001B[32m";
-	public static final String Red = "\u001B[31m";
-	public static final String Nrml= "\u001B[0m";
+		public static final String ANSI_GREEN = "\u001B[32m";
+		public static final String Red = "\u001B[31m";
+		public static final String Nrml= "\u001B[0m";
 			
 		
 	public static void main (String [] args){
@@ -79,15 +82,19 @@ public class TicToc{
 			for(int num= 0 ;num<9;num++){
 				for(int i=0;i<2; i++){
 						int tRow , tCol;
+						
 						if(i==0){
-									System.out.println("Player I :");
+									System.out.println(ANSI_GREEN+"Player I :"+Nrml);
 						}else {
-									System.out.println("Player II :");
+									System.out.println(ANSI_GREEN+"Player II :"+Nrml);
 						}
 						System.out.print("Enter value for Row : ");
 						tCol=S.nextInt();
 						System.out.print("Enter value for Colum : ");
 						tRow = S.nextInt();
+						if(tCol > 2 || tRow >2 ){
+							--i;
+						}
 						if(i == 0 ){
 									t.placeMark(tCol,tRow,'X');
 									t.dispBoard();
