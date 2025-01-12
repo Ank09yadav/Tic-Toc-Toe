@@ -1,4 +1,4 @@
-// Tic Toc Toe Game in java  Source file "create by ANK";
+// Tic Toc Toe Game in java  Source file "Made by ANK";
 import java.util.*;
 class TicTacToe{
 		public static final String ANSI_GREEN = "\u001B[32m";
